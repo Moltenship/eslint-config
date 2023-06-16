@@ -1,6 +1,6 @@
 {
   "name": "@moltenship/eslint-config-react",
-  "description": "ESLint shareable config for React",
+  "description": "Sharable ESLint config for React",
   "version": "1.0.0",
   "repository": "moltenship/eslint-config",
   "author": "Timofey Maximov",

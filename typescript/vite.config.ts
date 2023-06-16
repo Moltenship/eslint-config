@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
-import path from 'path'
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
+import path from 'path';
 
 export default defineConfig({
   build: {
@@ -14,7 +14,8 @@ export default defineConfig({
         '@typescript-eslint/eslint-plugin',
         '@typescript-eslint/parser',
         'eslint-plugin-import',
-        'eslint-plugin-vitest'
+        'eslint-plugin-vitest',
+        'eslint-plugin-perfectionist'
       ],
     },
   },
@@ -28,4 +29,4 @@ export default defineConfig({
       ],
     }),
   ],
-})
+});

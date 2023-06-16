@@ -8,7 +8,7 @@ export default defineConfig({
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "import"],
-  "extends": ["plugin:vitest/recommended"],
+  "extends": ["plugin:vitest/recommended", "plugin:perfectionist/recommended-alphabetical"],
   "rules": {
     "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/brace-style": ["error", "1tbs"],
@@ -427,5 +427,26 @@ export default defineConfig({
     "jsx-quotes": ["error", "prefer-double"],
     "class-methods-use-this": "off",
     "max-classes-per-file": "off",
-  }
-})
+    "perfectionist/sort-imports": [
+      "error",
+      {
+        "type": "alphabetical",
+        "order": "asc",
+        "groups": [
+          ["builtin", "external", "type", "builtin-type"],
+          ["internal", "internal-type"],
+          ["parent", "parent-type"],
+          ["siblings", "sibling-type", "side-effect", "index", "index-type"],
+          "style",
+          "object",
+          "unknown"
+        ],
+        "newlines-between": "always",
+        "internal-pattern": [
+          "@/**"
+        ],
+        "read-tsconfig": true
+      }
+    ]
+  },
+});

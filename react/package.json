@@ -1,0 +1,48 @@
+{
+  "name": "@moltenship/eslint-config-react",
+  "description": "ESLint shareable config for React",
+  "version": "1.0.0",
+  "repository": "moltenship/eslint-config",
+  "author": "Timofey Maximov",
+  "license": "ISC",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "linter",
+    "typescript",
+    "react"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "eslint": "^8.38.0"
+  },
+  "dependencies": {
+    "@moltenship/eslint-config-typescript": "workspace:^",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-define-config": "^1.20.0",
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0"
+  }
+}

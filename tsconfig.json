@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "target": "esnext",
+    "types": ["node"],
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "paths": {
+      "@moltenship/eslint-config-typescript": ["./typescript"],
+      "@moltenship/eslint-config-react": ["./react"],
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}

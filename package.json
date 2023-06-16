@@ -1,0 +1,23 @@
+{
+  "name": "@moltenship/eslint-config-monorepo",
+  "version": "1.0.0",
+  "description": "Sharable ESLint config",
+  "type": "module",
+  "private": true,
+  "repository": "moltenship/eslint-config",
+  "author": "Timofey Maximov",
+  "license": "ISC",
+  "scripts": {
+    "build": "pnpm --recursive run build",
+    "release": "pnpm build && pnpm release:version && pnpm release:publish",
+    "release:publish": "pnpm --recursive publish",
+    "release:version": "bumpp package.json base/package.json typescript/package.json react/package.json --tag --all",
+    "lint": "eslint **/*.{js,ts}"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.42.0",
+    "typescript": "^5.1.3"
+  }
+}

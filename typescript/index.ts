@@ -395,12 +395,7 @@ export default defineConfig({
         "allowArrowFunctions": true
       }
     ],
-    "import/order": [
-      "error",
-      {
-        "newlines-between": "always-and-inside-groups"
-      }
-    ],
+    "import/order": "off",
     "import/prefer-default-export": "off",
     "jsx-quotes": ["error", "prefer-double"],
     "class-methods-use-this": "off",

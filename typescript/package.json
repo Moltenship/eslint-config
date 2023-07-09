@@ -1,7 +1,7 @@
 {
   "name": "@moltenship/eslint-config-typescript",
   "description": "Sharable ESLint config for typescript",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "repository": "moltenship/eslint-config",
   "author": "Timofey Maximov",
   "license": "ISC",

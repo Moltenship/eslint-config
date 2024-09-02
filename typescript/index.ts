@@ -6,6 +6,7 @@ import typescriptParser from '@typescript-eslint/parser'
 import vitest from 'eslint-plugin-vitest'
 import eslintImport from 'eslint-plugin-import'
 import perfectionist from 'eslint-plugin-perfectionist'
+import stylistic from '@stylistic/eslint-plugin'
 
 export default defineFlatConfig([
   {
@@ -35,13 +36,14 @@ export default defineFlatConfig([
       '@typescript-eslint': eslintTypescript,
       perfectionist,
       vitest,
+      stylistic,
     }
-  },
+  } as unknown as FlatESLintConfig,
   {
     rules: {
       ...perfectionist.configs["recommended-alphabetical"].rules,
       "@typescript-eslint/no-shadow": ["error"],
-      "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }],
+      "@stylistic/space-infix-ops": ["error", { "int32Hint": false }],
       "@typescript-eslint/adjacent-overload-signatures": "error",
       "@typescript-eslint/prefer-function-type": "error",
       "@typescript-eslint/restrict-plus-operands": "error",
@@ -83,7 +85,7 @@ export default defineFlatConfig([
       "@typescript-eslint/type-annotation-spacing": "error",
       "@typescript-eslint/unified-signatures": "error",
       "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/comma-dangle": [
+      "@stylistic/comma-dangle": [
         "error",
         {
           "arrays": "always-multiline",
@@ -96,8 +98,8 @@ export default defineFlatConfig([
           "tuples": "always-multiline"
         }
       ],
-      "@typescript-eslint/semi": ["error", "always"],
-      "@typescript-eslint/member-delimiter-style": [
+      "@stylistic/semi": ["error", "always"],
+      "@stylistic/member-delimiter-style": [
         "error",
         {
           "multiline": {
@@ -110,7 +112,7 @@ export default defineFlatConfig([
           }
         }
       ],
-      "@typescript-eslint/indent": [
+      "@stylistic/indent": [
         "error",
         2,
         {
@@ -139,7 +141,6 @@ export default defineFlatConfig([
       "no-constant-condition": "error",
       "no-control-regex": "error",
       "no-debugger": "error",
-      "brace-style": ["error", "1tbs"],
       "no-dupe-args": "error",
       "no-dupe-else-if": "error",
       "no-dupe-keys": "error",
@@ -148,7 +149,7 @@ export default defineFlatConfig([
       "no-empty-character-class": "error",
       "no-ex-assign": "error",
       "no-extra-boolean-cast": "error",
-      "no-extra-semi": "error",
+      "@stylistic/no-extra-semi": "error",
       "no-func-assign": "error",
       "no-import-assign": "error",
       "no-invalid-regexp": "error",
@@ -173,7 +174,7 @@ export default defineFlatConfig([
       "curly": ["error", "all"],
       "default-case": "error",
       "default-case-last": "error",
-      "dot-location": ["error", "property"],
+      "@stylistic/dot-location": ["error", "property"],
       "dot-notation": "off",
       "@typescript-eslint/dot-notation": ["error"],
       "eqeqeq": ["error", "smart"],
@@ -246,49 +247,49 @@ export default defineFlatConfig([
       "no-delete-var": "error",
       "no-shadow-restricted-names": "error",
       "no-shadow": "off",
-      "array-bracket-newline": [
+      "@stylistic/array-bracket-newline": [
         "error",
         {
           "multiline": true
         }
       ],
-      "array-bracket-spacing": ["error", "never"],
-      "array-element-newline": ["error", "consistent"],
-      "comma-spacing": [
+      "@stylistic/array-bracket-spacing": ["error", "never"],
+      "@stylistic/array-element-newline": ["error", "consistent"],
+      "@stylistic/comma-spacing": [
         "error",
         {
           "before": false,
           "after": true
         }
       ],
-      "comma-style": "error",
-      "computed-property-spacing": ["error", "never"],
-      "eol-last": "error",
-      "func-call-spacing": ["error", "never"],
+      "@stylistic/comma-style": "error",
+      "@stylistic/computed-property-spacing": ["error", "never"],
+      "@stylistic/eol-last": "error",
+      "@stylistic/func-call-spacing": ["error", "never"],
       "func-name-matching": "error",
-      "function-call-argument-newline": ["error", "consistent"],
-      "function-paren-newline": ["error", "consistent"],
-      "key-spacing": [
+      "@stylistic/function-call-argument-newline": ["error", "consistent"],
+      "@stylistic/function-paren-newline": ["error", "consistent"],
+      "@stylistic/key-spacing": [
         "error",
         {
           "mode": "strict"
         }
       ],
-      "keyword-spacing": [
+      "@stylistic/keyword-spacing": [
         "error",
         {
           "after": true,
           "before": true
         }
       ],
-      "line-comment-position": [
+      "@stylistic/line-comment-position": [
         "error",
         {
           "position": "above"
         }
       ],
-      "linebreak-style": ["error", "unix"],
-      "lines-around-comment": [
+      "@stylistic/linebreak-style": ["error", "unix"],
+      "@stylistic/lines-around-comment": [
         "error",
         {
           "beforeLineComment": true,
@@ -302,9 +303,9 @@ export default defineFlatConfig([
           "allowClassEnd": true
         }
       ],
-      "lines-between-class-members": ["error", "always"],
+      "@stylistic/lines-between-class-members": ["error", "always"],
       "max-depth": ["error", 3],
-      "max-len": ["error", {
+      "@stylistic/max-len": ["error", {
         "code": 140,
         "ignoreComments": true,
         "ignoreStrings": true
@@ -312,7 +313,7 @@ export default defineFlatConfig([
       "max-lines": "off",
       "max-lines-per-function": "off",
       "max-params": "off",
-      "max-statements-per-line": [
+      "@stylistic/max-statements-per-line": [
         "error",
         {
           "max": 1
@@ -321,27 +322,27 @@ export default defineFlatConfig([
       "no-lonely-if": "error",
       "no-mixed-spaces-and-tabs": "error",
       "no-multi-assign": "error",
-      "no-multiple-empty-lines": [
+      "@stylistic/no-multiple-empty-lines": [
         "error",
         { "max": 1, "maxEOF": 0, "maxBOF": 1 }
       ],
       "no-negated-condition": "off",
       "no-nested-ternary": "error",
       "no-new-object": "error",
-      "no-tabs": "error",
-      "no-trailing-spaces": "error",
+      "@stylistic/no-tabs": "error",
+      "@stylistic/no-trailing-spaces": "error",
       "no-underscore-dangle": "off",
       "no-unneeded-ternary": "error",
-      "no-whitespace-before-property": "error",
-      "object-curly-newline": [
+      "@stylistic/no-whitespace-before-property": "error",
+      "@stylistic/object-curly-newline": [
         "error",
         {
           "multiline": true,
           "consistent": true
         }
       ],
-      "object-curly-spacing": ["error", "always"],
-      "object-property-newline": [
+      "@stylistic/object-curly-spacing": ["error", "always"],
+      "@stylistic/object-property-newline": [
         "error",
         {
           "allowAllPropertiesOnSameLine": true
@@ -349,29 +350,27 @@ export default defineFlatConfig([
       ],
       "one-var": ["error", "never"],
       "operator-assignment": "error",
-      "operator-linebreak": ["error", "after"],
+      "@stylistic/operator-linebreak": ["error", "after"],
       "prefer-exponentiation-operator": "error",
       "prefer-object-spread": "error",
-      "quote-props": ["error", "consistent-as-needed"],
-      "quotes": [
+      "@stylistic/quote-props": ["error", "consistent-as-needed"],
+      "@stylistic/quotes": [
         "error",
         "single",
         {
           "allowTemplateLiterals": true
         }
       ],
-      "semi-style": ["error", "last"],
-      "space-before-blocks": "error",
-      "space-before-function-paren": ["error", "never"],
-      "space-in-parens": ["error", "never"],
-      "space-infix-ops": "off",
-      "space-unary-ops": "error",
-      "spaced-comment": ["error", "always"],
-      "switch-colon-spacing": "error",
-      "template-tag-spacing": ["error", "never"],
-      "arrow-body-style": ["error", "as-needed"],
-      "arrow-parens": ["error", "as-needed"],
-      "arrow-spacing": "error",
+      "@stylistic/semi-style": ["error", "last"],
+      "@stylistic/space-before-blocks": "error",
+      "@stylistic/space-before-function-paren": ["error", "never"],
+      "@stylistic/space-unary-ops": "error",
+      "@stylistic/spaced-comment": ["error", "always"],
+      "@stylistic/switch-colon-spacing": "error",
+      "@stylistic/template-tag-spacing": ["error", "never"],
+      "@stylistic/arrow-body-style": ["error", "as-needed"],
+      "@stylistic/arrow-parens": ["error", "as-needed"],
+      "@stylistic/arrow-spacing": "error",
       "object-shorthand": [
         "error",
         "always",
@@ -387,8 +386,8 @@ export default defineFlatConfig([
       ],
       "no-bitwise": "error",
       "no-undef-init": "error",
-      "new-parens": "error",
-      "newline-per-chained-call": [
+      "@stylistic/new-parens": "error",
+      "@stylistic/newline-per-chained-call": [
         "error",
         {
           "ignoreChainWithDepth": 2
@@ -414,10 +413,9 @@ export default defineFlatConfig([
       "prefer-spread": "error",
       "prefer-template": "error",
       "require-yield": "error",
-      "rest-spread-spacing": ["error", "never"],
-      "template-curly-spacing": ["error", "never"],
+      "@stylistic/rest-spread-spacing": ["error", "never"],
+      "@stylistic/template-curly-spacing": ["error", "never"],
       "symbol-description": "error",
-      "indent": "off",
       "func-style": [
         "error",
         "declaration",
@@ -427,7 +425,7 @@ export default defineFlatConfig([
       ],
       "import/order": "off",
       "import/prefer-default-export": "off",
-      "jsx-quotes": ["error", "prefer-double"],
+      "@stylistic/jsx-quotes": ["error", "prefer-double"],
       "class-methods-use-this": "off",
       "max-classes-per-file": "off"
     },
@@ -450,6 +448,6 @@ export default defineFlatConfig([
       ...vitest.configs["recommended"].rules,
     }
   }
-])
+]);
 
 

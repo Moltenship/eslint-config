@@ -1,9 +1,10 @@
-import { defineFlatConfig } from "eslint-define-config";
+import { defineFlatConfig, type FlatESLintConfig } from "eslint-define-config";
 import typescriptConfig from "@moltenship/eslint-config-typescript";
 import reactHooks from "eslint-plugin-react-hooks"
 import jsxA11y from "eslint-plugin-jsx-a11y"
 import react from "eslint-plugin-react"
 import testingLibrary from "eslint-plugin-testing-library"
+import stylistic from "@stylistic/eslint-plugin"
 
 export default defineFlatConfig([
   ...typescriptConfig,
@@ -21,9 +22,10 @@ export default defineFlatConfig([
     plugins: {
       "react-hooks": reactHooks,
       "jsx-a11y": jsxA11y,
-    },
+      "@stylistic": stylistic,
+    } as any,
     rules: {
-      "react/jsx-wrap-multilines": ["error", {
+      "@stylistic/jsx-wrap-multilines": ["error", {
         "declaration": "parens-new-line",
         "assignment": "parens-new-line",
         "return": "parens-new-line",
@@ -40,18 +42,18 @@ export default defineFlatConfig([
       "react/jsx-no-undef": "error",
       "react/jsx-pascal-case": "error",
       "react/no-danger-with-children": "error",
-      "react/jsx-first-prop-new-line": ["error", "multiline"],
+      "@stylistic/jsx-first-prop-new-line": ["error", "multiline"],
       "react/no-direct-mutation-state": "error",
       "react/no-is-mounted": "error",
       "react/no-typos": "error",
       "react/require-render-return": "error",
       "react/style-prop-object": "error",
-      "react/jsx-max-props-per-line": ["error", { "maximum": { "single": 4, "multi": 1 } }],
-      "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
-      "react/jsx-closing-tag-location": "error",
-      "react/jsx-one-expression-per-line": ["error", {"allow": "literal"}],
-      "react/jsx-indent": ["error", 2],
-      "react/self-closing-comp": [
+      "@stylistic/jsx-max-props-per-line": ["error", { "maximum": { "single": 4, "multi": 1 } }],
+      "@stylistic/jsx-closing-bracket-location": ["error", "tag-aligned"],
+      "@stylistic/jsx-closing-tag-location": "error",
+      "@stylistic/jsx-one-expression-per-line": ["error", {"allow": "literal"}],
+      "@stylistic/jsx-indent": ["error", 2],
+      "@stylistic/jsx-self-closing-comp": [
         "error",
         {
           "component": true,

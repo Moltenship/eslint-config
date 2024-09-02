@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
-import path from 'path';
+import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
+import path from 'node:path'
 
 export default defineConfig({
   build: {
@@ -10,23 +10,21 @@ export default defineConfig({
       formats: ['cjs', 'es'],
     },
     rollupOptions: {
-      external: [
-        '@moltenship/eslint-config-typescript',
-        'eslint-plugin-testing-library',
-        'eslint-plugin-react-hooks',
-        'eslint-plugin-jsx-a11y',
-        'eslint-plugin-react',
-      ],
+      external: (id: string) =>
+        !id.startsWith('.') &&
+        !path.isAbsolute(id) &&
+        id !== 'eslint-define-config',
     },
   },
   plugins: [
     dts({
-      outputDir: path.join(__dirname, 'dist'),
+      outDir: path.join(__dirname, 'dist'),
       root: path.join(__dirname, '..'),
       entryRoot: __dirname,
       include: [
+        path.join(__dirname, '..', 'env.d.ts'),
         path.join(__dirname, 'index.ts'),
       ],
     }),
   ],
-});
+})

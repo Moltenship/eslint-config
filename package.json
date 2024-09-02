@@ -1,6 +1,6 @@
 {
   "name": "@moltenship/eslint-config-monorepo",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Sharable ESLint config",
   "type": "module",
   "private": true,

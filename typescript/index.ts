@@ -33,12 +33,13 @@ export default defineFlatConfig([
     plugins: {
       import: eslintImport,
       '@typescript-eslint': eslintTypescript,
+      perfectionist,
+      vitest,
     }
   },
-  perfectionist.configs["recommended-alphabetical"] as FlatESLintConfig,
-  vitest.configs["recommended"],
   {
     rules: {
+      ...perfectionist.configs["recommended-alphabetical"].rules,
       "@typescript-eslint/no-shadow": ["error"],
       "@typescript-eslint/brace-style": ["error", "1tbs"],
       "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }],

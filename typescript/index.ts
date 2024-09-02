@@ -41,7 +41,6 @@ export default defineFlatConfig([
     rules: {
       ...perfectionist.configs["recommended-alphabetical"].rules,
       "@typescript-eslint/no-shadow": ["error"],
-      "@typescript-eslint/brace-style": ["error", "1tbs"],
       "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }],
       "@typescript-eslint/adjacent-overload-signatures": "error",
       "@typescript-eslint/prefer-function-type": "error",
@@ -140,6 +139,7 @@ export default defineFlatConfig([
       "no-constant-condition": "error",
       "no-control-regex": "error",
       "no-debugger": "error",
+      "brace-style": ["error", "1tbs"],
       "no-dupe-args": "error",
       "no-dupe-else-if": "error",
       "no-dupe-keys": "error",

@@ -429,28 +429,7 @@ export default defineFlatConfig([
       "import/prefer-default-export": "off",
       "jsx-quotes": ["error", "prefer-double"],
       "class-methods-use-this": "off",
-      "max-classes-per-file": "off",
-      "perfectionist/sort-imports": [
-        "error",
-        {
-          "type": "alphabetical",
-          "order": "asc",
-          "groups": [
-            ["builtin", "external", "type", "builtin-type"],
-            ["internal", "internal-type"],
-            ["parent", "parent-type"],
-            ["siblings", "sibling-type", "side-effect", "index", "index-type"],
-            "style",
-            "object",
-            "unknown"
-          ],
-          "newlines-between": "always",
-          "internal-pattern": [
-            "@/**"
-          ],
-          "read-tsconfig": true
-        }
-      ]
+      "max-classes-per-file": "off"
     },
   },
   {
